@@ -1,0 +1,16 @@
+{% extends "layout.html" %}
+<!-- this block content fills in what is on layout.html -->
+{% block content %}
+<div class="messages">
+    <p>Here are the latest messages:</p>
+    <ul>
+        <!-- searched on "flask template for loop example" to see how to do this
+             my test_list() function returns a list of message strings
+             it loops just like python does and puts each one in an "item"
+             then put in an html list item tag <li> and it put in each item for me -->
+        {% for item in test_list() %}
+            <li>{{ item }}</li>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock %}
