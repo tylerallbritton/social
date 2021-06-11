@@ -12,6 +12,7 @@ def list_messages(contact):
     cur.execute(f"SELECT message FROM messages WHERE received = '{contact}' or via = '{contact}'")
     rows = cur.fetchall()
     conn.close()
+    # google search "python cursor fetch rows into list example"
     return rows
 
 def test_list():
