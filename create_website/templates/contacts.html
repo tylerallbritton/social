@@ -1,7 +1,10 @@
 {%extends "layout.html"%}
 {%block content%}
 <div class="contacts">
-    <h1>My About Page</h1>
-    <p>This is a test website again</p>
+    <p>Here is everybody you talk to!</p>
+    <ul> {% for item in list_contacts() %}
+            <li><b>{{ item[1] }}: </b> {{ item[0] }}</li>
+        {% endfor %}
+    </ul>
 </div>
 {%endblock%}

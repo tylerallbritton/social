@@ -8,9 +8,13 @@
              my test_list() function returns a list of message strings
              it loops just like python does and puts each one in an "item"
              then put in an html list item tag <li> and it put in each item for me -->
-        {% for item in test_list() %}
-            <li>{{ item }}</li>
+        {% for item in list_messages(contact='Chase') %}
+            <li><b>{{ item[0] }}:</b> {{ item[2] }}</li>
         {% endfor %}
+    <form action="/messages/" method = "POST">
+        <p>Message <textarea name="message" rows = "4" value = ""></textarea></p>
+        <p><input type = "submit" value = "Submit" /></p>
+    </form>
     </ul>
 </div>
 {% endblock %}
